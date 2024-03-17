@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Date</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="date.css" />
+	</head>
+	
+	<body>
+		
+		<header>
+            <h1>How many days have you spent on this Earth so far?</h1>
+        </header>
+		<nav>
+			
+		</nav>
+		<main>
+            <button onclick="birthday(); getElementById('date').innerHTML=Date();">What is the day today?</button>
+    <p id="date"></p>
+    <div id="birthday" hidden><Label>Date of your birth:</Label><input type="date" 
+		id="myBday" placeholder="dd-mm-yyyy" min="1890-01-01" max="2023-12-31"><br><br>
+        
+		<input  type="button" onclick="submit()" value="submit"></div>
+		<p id="youlived"></p>
+        <script>
+            function birthday() 
+				{setTimeout(() => {
+  				const bDay = document.getElementById('birthday');
+				  bDay.style.display = 'block';
+				}, 1500);
+               		
+            } 
+			submit = () => {
+				
+				let birthDate = new Date(document.getElementById("myBday").value);
+				let currentDate = new Date();
+				let timeSpent = currentDate.getTime() - birthDate.getTime();
+				let daySpent = timeSpent / (1000 * 3600 * 24)
+				document.getElementById('youlived').innerHTML = `You have lived ${daySpent.toFixed(2)}
+				 days so far. Congratulations!`
+			}
+
+        </script>
+		</main>
+		<footer>
+		
+		</footer>
+	</body>
+</html>

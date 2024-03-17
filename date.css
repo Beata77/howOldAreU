@@ -1,0 +1,14 @@
+body {
+    background-color: #f6f7a8;
+    display: block;
+    
+}
+
+h1 {
+    color: blue;
+    justify-content: center;
+}
+
+#youlived {
+    font-size: 1.5em;
+}
